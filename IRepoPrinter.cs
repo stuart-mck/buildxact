@@ -22,7 +22,7 @@ namespace buildxact_supplies
         public void PrintRepo(string displayCurrency)
         {
             _supplierRepository.List()
-                .OrderBy(p => _currencyConverter.ConvertCurrency(p.UnitPrice, p.Currency, displayCurrency))
+                .OrderByDescending(p => _currencyConverter.ConvertCurrency(p.UnitPrice, p.Currency, displayCurrency))
                 .ToList()
                 .ForEach(rec => Console.WriteLine($"{rec.ItemId},{rec.Description},{decimal.Round(_currencyConverter.ConvertCurrency(rec.UnitPrice, rec.Currency, displayCurrency),2)}"));
         }
