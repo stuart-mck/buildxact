@@ -10,6 +10,16 @@ I followed the humphries path through to displaying the output but didn't get th
 
 This code will support the data as presented in the example but would likely not scale terribly well as most of the work is done in memory
 
+If I had more time, what would I do?
+1. Finish the mega importer
+2. Finish the currency converter (load currencies from appconfig)
+3. Refine the separation of concerns
+	-> remove calls to Console from services - prob pass in a separate UI handler
+	-> tidy up the ChooseFiles method - it's handling many concerns and should be refactored
+4. How to handle bigger files - that needs a strategy both on the way in and the way out
+5. Improve the project structure - move services to appropriate domains 
+6. Rewrite using CQRS?- really separate out the writes from the reads
+
 
 
 
