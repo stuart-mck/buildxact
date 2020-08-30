@@ -1,4 +1,9 @@
 ﻿using buildxact_supplies;
+using buildxact_supplies.Domain;
+using buildxact_supplies.Domain.Supplier;
+using buildxact_supplies.FileParsing;
+using buildxact_supplies.Injester;
+using buildxact_supplies.ListPrinter;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -16,6 +21,7 @@ namespace SuppliesPriceLister
 
             service.ProcessFiles(new DirectoryInfo(Path.Combine(Environment.CurrentDirectory, "Imports")));
 
+            Console.ReadLine();
 
         }
 
@@ -26,7 +32,7 @@ namespace SuppliesPriceLister
             services.AddSingleton<SupplierListService>();
             services.AddSingleton<IFileChooser, FileChooser>();
             services.AddSingleton<IRepository<SupplierEntity, string>, SupplierRepository>();
-            services.AddSingleton<IRepoPrinter, RepoPrinter>();
+            services.AddSingleton<IListWriter, SupplierListWriter>();
             services.AddSingleton<IFileLoader, FileLoader>();
             services.AddSingleton<ICurrencyConverter, CurrencyConverter>();
             return services.BuildServiceProvider();

@@ -1,5 +1,4 @@
-﻿
-namespace buildxact_supplies
+﻿namespace buildxact_supplies.Domain.Supplier
 {
     public class SupplierEntity
     {
@@ -15,7 +14,7 @@ namespace buildxact_supplies
 
         public decimal UnitPrice { get; set; }
 
-
+        //todo: what other fields? need to capture extra data present in the mega list
 
     }
 }

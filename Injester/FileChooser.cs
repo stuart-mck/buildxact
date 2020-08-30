@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
-namespace buildxact_supplies
+namespace buildxact_supplies.Injester
 {
-    public interface IFileChooser
-    {
-        (string command, IList<FileChoiceDto> files) ChooseFiles(DirectoryInfo targetDirectory);
-    }
-
     public class FileChooser : IFileChooser
     {
         private static List<string> ValidCommands = new List<string>(){
@@ -18,8 +12,11 @@ namespace buildxact_supplies
                 "d"
             };
 
-        public  (string command, IList<FileChoiceDto> files) ChooseFiles(DirectoryInfo targetDirectory)
+        public (string command, IList<FileChoiceDto> files) ChooseFiles(DirectoryInfo targetDirectory)
         {
+
+            //todo: this needs work - too big, too many responsibilities
+
             List<FileChoiceDto> filesToInDirectory = GetDirectoryFileList(targetDirectory);
 
             var filesToLoad = new List<FileChoiceDto>();

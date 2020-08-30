@@ -1,18 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 
-namespace buildxact_supplies
+namespace buildxact_supplies.Domain.Supplier
 {
-    public interface IRepository<T, TPK> where T : new()
-    {
-        void Save (T value);
-
-        T Load(TPK id);
-
-        List<T> List();
-
-    }
-
     public class SupplierRepository : IRepository<SupplierEntity, string>
     {
         private readonly List<SupplierEntity> _memoryStore = new List<SupplierEntity>();
@@ -24,7 +15,7 @@ namespace buildxact_supplies
 
         public SupplierEntity Load(string id)
         {
-            return new SupplierEntity();
+            throw new NotImplementedException();
         }
 
         public List<SupplierEntity> List()

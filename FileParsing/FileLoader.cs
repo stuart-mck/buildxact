@@ -1,15 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using buildxact_supplies.Domain;
+using buildxact_supplies.Domain.Supplier;
+using System.Collections.Generic;
 using System.IO;
 
 
-namespace buildxact_supplies
+namespace buildxact_supplies.FileParsing
 {
-    public interface IFileLoader
-    {
-        List<string> LoadFiles(DirectoryInfo targetDirectory, IList<FileChoiceDto> filesToLoad);
-    }
-
-
     public class FileLoader : IFileLoader
     {
         private readonly IRepository<SupplierEntity, string> _repository;
@@ -22,7 +18,7 @@ namespace buildxact_supplies
         public List<string> LoadFiles(DirectoryInfo targetDirectory, IList<FileChoiceDto> filesToLoad)
         {
             var results = new List<string>();
-            foreach(var file in filesToLoad)
+            foreach (var file in filesToLoad)
             {
                 var completeFilePath = Path.Combine(targetDirectory.FullName, file.FileName);
                 if (File.Exists(completeFilePath))

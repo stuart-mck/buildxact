@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-
-namespace buildxact_supplies
+﻿namespace buildxact_supplies
 {
     public class FileChoiceDto
     {
@@ -18,6 +13,4 @@ namespace buildxact_supplies
 
     }
 
-
-    
 }
