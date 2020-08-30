@@ -13,8 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="megacorp.json" />
-    <EmbeddedResource Include="humphries.csv" />
+    <EmbeddedResource Include="Imports\megacorp.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\humphries.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
